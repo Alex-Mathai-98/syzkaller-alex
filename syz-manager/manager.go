@@ -611,10 +611,16 @@ func (mgr *Manager) preloadCorpus() {
 			log.Fatalf("failed to open corpus database: %v", err)
 		}
 		log.Errorf("read %v inputs from corpus and got error: %v", len(corpusDB.Records), err)
+	} else {
+		// Added by Alex Mathai : Start
+		log.Logf(0, "successfully loaded corpus with %v records...", len(corpusDB.Records))
+		// Added by Alex Mathai : End
 	}
+
 	mgr.corpusDB = corpusDB
 
 	if seedDir := filepath.Join(mgr.cfg.Syzkaller, "sys", mgr.cfg.TargetOS, "test"); osutil.IsExist(seedDir) {
+		log.Logf(0, "seed directory %v exists", filepath.Join(mgr.cfg.Syzkaller, "sys", mgr.cfg.TargetOS, "test"))
 		seeds, err := os.ReadDir(seedDir)
 		if err != nil {
 			log.Fatalf("failed to read seeds dir: %v", err)
@@ -623,9 +629,15 @@ func (mgr *Manager) preloadCorpus() {
 			data, err := os.ReadFile(filepath.Join(seedDir, seed.Name()))
 			if err != nil {
 				log.Fatalf("failed to read seed %v: %v", seed.Name(), err)
+			} else {
+				log.Logf(0, "Read seed : %v", seed.Name())
 			}
 			mgr.seeds = append(mgr.seeds, data)
 		}
+	} else {
+		// Added by Alex Mathai : Start
+		log.Logf(0, "seed directory %v does not exist", filepath.Join(mgr.cfg.Syzkaller, "sys", mgr.cfg.TargetOS, "test"))
+		// Added by Alex Mathai : End
 	}
 }
 
