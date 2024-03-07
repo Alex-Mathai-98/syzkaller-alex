@@ -1,0 +1,148 @@
+2024/03/04 23:26:07 loading corpus...
+2024/03/04 23:26:07 successfully loaded corpus with 0 records...
+2024/03/04 23:26:07 seed directory /home/am6215/syzkaller-alex/workdirs/workdir_98752a936529ae14348d8cab92f82e521ef96dd2/seeds exists
+2024/03/04 23:26:07 Read seed : reproducer_1
+2024/03/04 23:26:07 Read seed : reproducer_2
+2024/03/04 23:26:07 serving http on http://127.0.0.1:56741
+2024/03/04 23:26:07 serving rpc on tcp://[::]:34841
+2024/03/04 23:26:07 booting test machines...
+2024/03/04 23:26:07 wait for the connection from test machine...
+2024/03/04 23:27:12 machine check:
+2024/03/04 23:27:12 syscalls                : 3872/4501
+2024/03/04 23:27:12 code coverage           : enabled
+2024/03/04 23:27:12 comparison tracing      : enabled
+2024/03/04 23:27:12 extra coverage          : enabled
+2024/03/04 23:27:12 delay kcov mmap         : mmap returned an invalid pointer
+2024/03/04 23:27:12 setuid sandbox          : enabled
+2024/03/04 23:27:12 namespace sandbox       : enabled
+2024/03/04 23:27:12 Android sandbox         : enabled
+2024/03/04 23:27:12 fault injection         : enabled
+2024/03/04 23:27:12 leak checking           : CONFIG_DEBUG_KMEMLEAK is not enabled
+2024/03/04 23:27:12 net packet injection    : enabled
+2024/03/04 23:27:12 net device setup        : enabled
+2024/03/04 23:27:12 concurrency sanitizer   : /sys/kernel/debug/kcsan does not exist
+2024/03/04 23:27:12 devlink PCI setup       : PCI device 0000:00:10.0 is not available
+2024/03/04 23:27:12 NIC VF setup            : PCI device 0000:00:11.0 is not available
+2024/03/04 23:27:12 USB emulation           : enabled
+2024/03/04 23:27:12 hci packet injection    : enabled
+2024/03/04 23:27:12 wifi device emulation   : enabled
+2024/03/04 23:27:12 802.15.4 emulation      : enabled
+2024/03/04 23:27:12 swap file               : enabled
+2024/03/04 23:27:12 corpus                  : 0 (deleted 0 broken)
+2024/03/04 23:27:12 seeds                   : 2/2
+2024/03/04 23:27:17 VMs 2, executed 0, cover 0, signal 0/0, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:27:27 VMs 3, executed 75, cover 1292, signal 1422/8706, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:27:37 VMs 4, executed 1348, cover 5107, signal 5844/12057, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:27:47 VMs 4, executed 3170, cover 8536, signal 10329/18894, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:27:57 VMs 4, executed 5751, cover 9501, signal 12164/22993, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:28:07 VMs 4, executed 8597, cover 10631, signal 13847/23885, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:28:17 VMs 4, executed 11525, cover 11049, signal 14589/24309, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:28:27 VMs 4, executed 14090, cover 11785, signal 15547/24733, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:28:37 VMs 4, executed 16707, cover 12549, signal 16627/28290, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:28:47 VMs 4, executed 19196, cover 14786, signal 19641/30622, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:28:57 VMs 4, executed 21212, cover 16221, signal 21211/37176, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:29:07 VMs 4, executed 23329, cover 17795, signal 23917/40595, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:29:17 VMs 4, executed 25752, cover 20591, signal 27066/42124, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:29:27 VMs 4, executed 28195, cover 21215, signal 28036/43589, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:29:37 VMs 4, executed 30508, cover 21811, signal 28968/43921, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:29:47 VMs 4, executed 32935, cover 22316, signal 29564/45021, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:29:57 VMs 4, executed 34945, cover 23197, signal 30442/45822, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:30:07 VMs 4, executed 36715, cover 24003, signal 31625/47206, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:30:17 VMs 4, executed 39471, cover 24786, signal 32797/50086, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:30:27 VMs 4, executed 42029, cover 25911, signal 34266/54760, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:30:37 VMs 4, executed 44586, cover 27138, signal 35505/57518, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:30:47 VMs 4, executed 47447, cover 30646, signal 37989/57872, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:30:57 VMs 4, executed 49761, cover 31436, signal 41446/58379, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:31:07 VMs 4, executed 52151, cover 34317, signal 43997/58669, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:31:17 VMs 4, executed 53960, cover 34603, signal 45817/59138, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:31:27 VMs 4, executed 55613, cover 35211, signal 46683/59532, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:31:37 VMs 4, executed 57555, cover 35628, signal 47291/60064, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:31:47 VMs 4, executed 59163, cover 36263, signal 48125/63335, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:31:57 VMs 4, executed 60852, cover 36729, signal 48802/63735, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:32:07 VMs 4, executed 62801, cover 37453, signal 49626/66549, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:32:17 VMs 4, executed 64828, cover 39210, signal 51848/67071, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:32:27 VMs 4, executed 66761, cover 39708, signal 52713/67507, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:32:37 VMs 4, executed 68293, cover 39859, signal 53023/68503, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:32:47 VMs 4, executed 69546, cover 40079, signal 53384/68800, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:32:57 VMs 4, executed 70662, cover 40385, signal 53880/69339, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:33:07 VMs 4, executed 71623, cover 40657, signal 54256/69827, crashes 0, repro 0, triageQLen 0
+2024/03/04 23:33:11 vm-3: crash: SYZFATAL: executor NUM failed NUM times: executor NUM: exit status NUM err exit status NUM
+2024/03/04 23:33:11 vm-0: running for 6m6.579203488s, restarting
+2024/03/04 23:33:12 vm-1: running for 5m56.515098101s, restarting
+2024/03/04 23:33:12 loop: starting repro of 'SYZFATAL: executor NUM failed NUM times: executor NUM: exit status NUM err exit status NUM' on instances [3 0 1]
+2024/03/04 23:33:12 reproducing crash 'SYZFATAL: executor NUM failed NUM times: executor NUM: exit status NUM err exit status NUM': 143 programs, 3 VMs, timeouts [15s 1m40s 6m0s]
+2024/03/04 23:33:17 VMs 1, executed 71991, cover 41074, signal 54787/70220, crashes 1, repro 1, triageQLen 0
+2024/03/04 23:33:27 VMs 1, executed 72018, cover 41074, signal 54787/70257, crashes 1, repro 1, triageQLen 0
+2024/03/04 23:33:37 VMs 1, executed 72055, cover 41074, signal 54787/70283, crashes 1, repro 1, triageQLen 0
+2024/03/04 23:33:47 VMs 1, executed 72090, cover 41075, signal 54790/70402, crashes 1, repro 1, triageQLen 0
+2024/03/04 23:33:57 VMs 1, executed 72090, cover 41075, signal 54790/70402, crashes 1, repro 1, triageQLen 0
+2024/03/04 23:34:04 vm-2: crash: lost connection to test machine [suppressed]
+2024/03/04 23:34:07 VMs 0, executed 72090, cover 41075, signal 54790/70402, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:34:17 VMs 0, executed 72090, cover 41075, signal 54790/70402, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:34:27 VMs 0, executed 72090, cover 41075, signal 54790/70402, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:34:37 VMs 0, executed 72090, cover 41075, signal 54790/70402, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:34:47 reproducing crash 'SYZFATAL: executor NUM failed NUM times: executor NUM: exit status NUM err exit status NUM': failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/04 23:34:47 VMs 0, executed 72090, cover 41075, signal 54790/70402, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:34:57 VMs 0, executed 72090, cover 41075, signal 54790/70402, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:35:07 VMs 1, executed 72090, cover 41075, signal 54790/70402, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:35:17 VMs 1, executed 72090, cover 41075, signal 54790/70402, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:35:27 VMs 1, executed 72196, cover 41169, signal 54942/71262, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:35:37 VMs 1, executed 73117, cover 41223, signal 55108/71384, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:35:47 VMs 1, executed 74114, cover 41454, signal 55564/71485, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:35:57 VMs 1, executed 74708, cover 41728, signal 55758/71619, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:36:07 VMs 1, executed 75402, cover 41751, signal 55857/71677, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:36:17 VMs 1, executed 75402, cover 41800, signal 55945/71677, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:36:27 VMs 1, executed 76116, cover 41980, signal 56220/71756, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:36:37 VMs 1, executed 76927, cover 42067, signal 56346/72258, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:36:47 VMs 1, executed 77793, cover 42154, signal 56489/73037, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:36:57 VMs 1, executed 78237, cover 42175, signal 56518/75307, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:37:05 reproducing crash 'SYZFATAL: executor NUM failed NUM times: executor NUM: exit status NUM err exit status NUM': failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/04 23:37:07 VMs 1, executed 78980, cover 42371, signal 56806/75628, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:37:17 VMs 1, executed 78980, cover 42466, signal 57010/75628, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:37:27 VMs 1, executed 79811, cover 42567, signal 57164/75690, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:37:28 reproducing crash 'SYZFATAL: executor NUM failed NUM times: executor NUM: exit status NUM err exit status NUM': failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/04 23:37:37 VMs 1, executed 80561, cover 42604, signal 57227/75757, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:37:47 VMs 1, executed 81052, cover 42609, signal 57241/75774, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:37:57 VMs 1, executed 81159, cover 42623, signal 57261/76890, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:38:07 VMs 1, executed 81281, cover 42623, signal 57261/78322, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:38:17 VMs 1, executed 81281, cover 42623, signal 57261/78322, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:38:27 VMs 1, executed 81425, cover 42634, signal 57263/78508, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:38:37 VMs 1, executed 81556, cover 42634, signal 57263/78623, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:38:47 VMs 1, executed 81689, cover 42634, signal 57263/78685, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:38:57 VMs 1, executed 81830, cover 42634, signal 57263/78734, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:39:07 VMs 1, executed 81973, cover 42634, signal 57263/78812, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:39:17 VMs 1, executed 81973, cover 42634, signal 57263/78812, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:39:27 VMs 1, executed 82112, cover 42634, signal 57263/78890, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:39:37 VMs 1, executed 82240, cover 42634, signal 57467/79053, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:39:47 VMs 1, executed 82315, cover 42726, signal 57557/79086, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:39:57 VMs 1, executed 82359, cover 42726, signal 57557/79118, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:40:07 VMs 1, executed 82399, cover 42726, signal 57557/79139, crashes 2, repro 1, triageQLen 0
+2024/03/04 23:40:12 loop: repro on [3 0 1] finished 'SYZFATAL: executor NUM failed NUM times: executor NUM: exit status NUM err exit status NUM', repro=true crepro=false desc='BUG: sleeping function called from invalid context in sta_info_move_state' hub=false from_dashboard=false
+2024/03/04 23:40:17 VMs 1, executed 82399, cover 42726, signal 57557/79139, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:40:27 VMs 1, executed 82439, cover 42726, signal 57557/79169, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:40:37 VMs 1, executed 82484, cover 45340, signal 59402/79205, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:40:47 VMs 1, executed 82524, cover 45340, signal 59402/79244, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:40:57 VMs 1, executed 82572, cover 45369, signal 59425/79279, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:41:07 VMs 1, executed 82614, cover 45369, signal 59425/79299, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:41:17 VMs 4, executed 82614, cover 45369, signal 59425/79299, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:41:27 VMs 4, executed 83175, cover 45692, signal 59861/80309, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:41:37 VMs 4, executed 85204, cover 46003, signal 60327/80636, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:41:47 VMs 4, executed 86756, cover 46140, signal 60574/80912, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:41:57 VMs 4, executed 88177, cover 46422, signal 60849/81582, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:42:07 VMs 4, executed 90338, cover 46548, signal 61068/82636, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:42:17 VMs 4, executed 91967, cover 47021, signal 61744/83369, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:42:27 VMs 4, executed 93651, cover 47219, signal 62066/84183, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:42:37 VMs 4, executed 95848, cover 47336, signal 62308/84693, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:42:47 VMs 4, executed 97743, cover 48339, signal 63544/85253, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:42:57 VMs 4, executed 99421, cover 49151, signal 64596/86126, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:43:07 VMs 4, executed 101409, cover 49408, signal 65071/86427, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:43:17 VMs 4, executed 103193, cover 49754, signal 65614/86650, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:43:27 VMs 4, executed 104931, cover 50352, signal 66926/86904, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:43:37 VMs 4, executed 106663, cover 50495, signal 67171/87345, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:43:47 VMs 4, executed 107810, cover 50663, signal 67482/88261, crashes 2, repro 0, triageQLen 0
+2024/03/04 23:43:57 VMs 4, executed 109110, cover 51261, signal 69163/89956, crashes 2, repro 0, triageQLen 0
+SIGINT: shutting down...
+2024/03/04 23:44:04 vm-1: running for 2m54.390456847s, restarting
+2024/03/04 23:44:04 vm-2: running for 9m1.435523822s, restarting
+2024/03/04 23:44:04 vm-0: running for 2m54.428190237s, restarting
+2024/03/04 23:44:04 vm-3: running for 2m54.499112105s, restarting

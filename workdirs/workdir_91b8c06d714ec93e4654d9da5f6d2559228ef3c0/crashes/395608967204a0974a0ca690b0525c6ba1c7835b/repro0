@@ -1,0 +1,23 @@
+Extracting prog: 45.502µs
+Minimizing prog: 0s
+Simplifying prog options: 0s
+Extracting C: 0s
+Simplifying C: 0s
+
+
+73 programs, 3 VMs, timeouts [15s 1m40s 6m0s]
+extracting reproducer from 0 programs
+single: executing 0 programs separately with timeout 15s
+single: failed to extract reproducer
+bisect: bisecting 0 programs with base timeout 15s
+replaying the whole log did not cause a kernel crash
+single: executing 0 programs separately with timeout 1m40s
+single: failed to extract reproducer
+bisect: bisecting 0 programs with base timeout 1m40s
+replaying the whole log did not cause a kernel crash
+single: executing 0 programs separately with timeout 6m0s
+single: failed to extract reproducer
+bisect: bisecting 0 programs with base timeout 6m0s
+replaying the whole log did not cause a kernel crash
+failed to extract reproducer
+reproducing took 47.763µs

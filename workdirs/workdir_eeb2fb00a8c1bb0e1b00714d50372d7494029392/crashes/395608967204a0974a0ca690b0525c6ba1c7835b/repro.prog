@@ -1,0 +1,13 @@
+# {Threaded:false Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:false Wifi:true IEEE802154:true Sysctl:false Swap:true UseTmpDir:true HandleSegv:true Repro:false Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}
+fgetxattr(0xffffffffffffffff, &(0x7f0000000000)=@known='user.incfs.metadata\x00', 0x0, 0x0)
+getsockopt$inet_sctp6_SCTP_GET_PEER_ADDR_INFO(0xffffffffffffffff, 0x84, 0xf, &(0x7f0000000100)={<r0=>0x0, @in={{0x2, 0x4e20, @rand_addr=0x64010101}}, 0x7fff, 0x10000, 0x5, 0x7ff, 0x2}, &(0x7f00000001c0)=0x98)
+getsockopt$inet_sctp6_SCTP_MAXSEG(0xffffffffffffffff, 0x84, 0xd, &(0x7f0000000200)=@assoc_id=r0, 0x0)
+getsockopt$inet_sctp6_SCTP_SOCKOPT_PEELOFF(0xffffffffffffffff, 0x84, 0x66, 0x0, &(0x7f0000000300))
+ioctl$BTRFS_IOC_QUOTA_RESCAN_STATUS(0xffffffffffffffff, 0x8040942d, 0x0)
+r1 = syz_init_net_socket$netrom(0x6, 0x5, 0x0)
+ioctl$F2FS_IOC_GET_PIN_FILE(r1, 0x8004f50e, 0x0)
+setsockopt$inet_sctp6_SCTP_PARTIAL_DELIVERY_POINT(r1, 0x84, 0x13, &(0x7f0000000400)=0xefc, 0x4)
+r2 = openat$kvm(0xffffffffffffff9c, &(0x7f0000000440), 0x602140, 0x0)
+ioctl$KVM_GET_API_VERSION(r2, 0xae00, 0x0)
+getsockopt$inet_sctp_SCTP_STREAM_SCHEDULER_VALUE(0xffffffffffffffff, 0x84, 0x7c, 0x0, 0x0)
+socket(0x2c, 0x80000, 0x6)

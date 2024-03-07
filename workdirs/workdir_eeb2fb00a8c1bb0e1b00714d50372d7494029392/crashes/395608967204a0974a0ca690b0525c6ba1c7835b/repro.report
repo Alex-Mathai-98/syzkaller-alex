@@ -1,0 +1,84 @@
+BUG: sleeping function called from invalid context at net/mac80211/sta_info.c:1962
+in_atomic(): 0, irqs_disabled(): 0, non_block: 0, pid: 5457, name: kworker/u4:3
+4 locks held by kworker/u4:3/5457:
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: arch_atomic64_set root/ramdisk/work_dir/linux/./arch/x86/include/asm/atomic64_64.h:34 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: atomic64_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-instrumented.h:856 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: atomic_long_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-long.h:41 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: set_work_data root/ramdisk/work_dir/linux/kernel/workqueue.c:616 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: set_work_pool_and_clear_pending root/ramdisk/work_dir/linux/kernel/workqueue.c:643 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: process_one_work+0x88f/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2243
+ #1: ffffc90001117d98 ((work_completion)(&sdata->work)){+.+.}-{0:0}, at: process_one_work+0x8c3/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2247
+ #2: ffff888054f10d00 (&wdev->mtx){+.+.}-{3:3}, at: sdata_lock root/ramdisk/work_dir/linux/net/mac80211/ieee80211_i.h:1021 [inline]
+ #2: ffff888054f10d00 (&wdev->mtx){+.+.}-{3:3}, at: ieee80211_ibss_work+0x91/0xeb0 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:1683
+ #3: ffffffff8b337620 (rcu_read_lock){....}-{1:2}, at: sta_info_insert_finish root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:644 [inline]
+ #3: ffffffff8b337620 (rcu_read_lock){....}-{1:2}, at: sta_info_insert_rcu+0x51b/0x26b0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:732
+Preemption disabled at:
+[<ffffffff88e9f069>] __mutex_lock_common root/ramdisk/work_dir/linux/kernel/locking/mutex.c:955 [inline]
+[<ffffffff88e9f069>] __mutex_lock+0x129/0x11e0 root/ramdisk/work_dir/linux/kernel/locking/mutex.c:1103
+CPU: 0 PID: 5457 Comm: kworker/u4:3 Not tainted 5.10.0-rc2-syzkaller #0
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.16.2-debian-1.16.2-1 04/01/2014
+Workqueue: phy11 ieee80211_iface_work
+Call Trace:
+ __dump_stack root/ramdisk/work_dir/linux/lib/dump_stack.c:77 [inline]
+ dump_stack+0x107/0x163 root/ramdisk/work_dir/linux/lib/dump_stack.c:118
+ ___might_sleep.cold+0x1e6/0x22c root/ramdisk/work_dir/linux/kernel/sched/core.c:7298
+ sta_info_move_state+0x32/0xb90 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:1962
+ sta_info_free+0x66/0x3c0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:274
+ sta_info_insert_rcu+0x585/0x26b0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:738
+ ieee80211_ibss_finish_sta+0x20b/0x380 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:592
+ ieee80211_ibss_work+0x2c7/0xeb0 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:1700
+ ieee80211_iface_work+0x8bb/0x9d0 root/ramdisk/work_dir/linux/net/mac80211/iface.c:1476
+ process_one_work+0x9a9/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2272
+ worker_thread+0x676/0x1170 root/ramdisk/work_dir/linux/kernel/workqueue.c:2418
+ kthread+0x3a0/0x490 root/ramdisk/work_dir/linux/kernel/kthread.c:292
+ ret_from_fork+0x1f/0x30 root/ramdisk/work_dir/linux/arch/x86/entry/entry_64.S:296
+
+=============================
+[ BUG: Invalid wait context ]
+5.10.0-rc2-syzkaller #0 Tainted: G        W        
+-----------------------------
+kworker/u4:3/5457 is trying to lock:
+ffff8880550829d0 (&local->chanctx_mtx){+.+.}-{3:3}, at: ieee80211_recalc_min_chandef+0x49/0x140 root/ramdisk/work_dir/linux/net/mac80211/util.c:2740
+other info that might help us debug this:
+context-{4:4}
+4 locks held by kworker/u4:3/5457:
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: arch_atomic64_set root/ramdisk/work_dir/linux/./arch/x86/include/asm/atomic64_64.h:34 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: atomic64_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-instrumented.h:856 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: atomic_long_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-long.h:41 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: set_work_data root/ramdisk/work_dir/linux/kernel/workqueue.c:616 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: set_work_pool_and_clear_pending root/ramdisk/work_dir/linux/kernel/workqueue.c:643 [inline]
+ #0: ffff888015d60138 ((wq_completion)phy11){+.+.}-{0:0}, at: process_one_work+0x88f/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2243
+ #1: ffffc90001117d98 ((work_completion)(&sdata->work)){+.+.}-{0:0}, at: process_one_work+0x8c3/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2247
+ #2: ffff888054f10d00 (&wdev->mtx){+.+.}-{3:3}, at: sdata_lock root/ramdisk/work_dir/linux/net/mac80211/ieee80211_i.h:1021 [inline]
+ #2: ffff888054f10d00 (&wdev->mtx){+.+.}-{3:3}, at: ieee80211_ibss_work+0x91/0xeb0 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:1683
+ #3: ffffffff8b337620 (rcu_read_lock){....}-{1:2}, at: sta_info_insert_finish root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:644 [inline]
+ #3: ffffffff8b337620 (rcu_read_lock){....}-{1:2}, at: sta_info_insert_rcu+0x51b/0x26b0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:732
+stack backtrace:
+CPU: 0 PID: 5457 Comm: kworker/u4:3 Tainted: G        W         5.10.0-rc2-syzkaller #0
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.16.2-debian-1.16.2-1 04/01/2014
+Workqueue: phy11 ieee80211_iface_work
+Call Trace:
+ __dump_stack root/ramdisk/work_dir/linux/lib/dump_stack.c:77 [inline]
+ dump_stack+0x107/0x163 root/ramdisk/work_dir/linux/lib/dump_stack.c:118
+ print_lock_invalid_wait_context root/ramdisk/work_dir/linux/kernel/locking/lockdep.c:4483 [inline]
+ check_wait_context root/ramdisk/work_dir/linux/kernel/locking/lockdep.c:4544 [inline]
+ __lock_acquire.cold+0x356/0x3e5 root/ramdisk/work_dir/linux/kernel/locking/lockdep.c:4781
+ lock_acquire root/ramdisk/work_dir/linux/kernel/locking/lockdep.c:5436 [inline]
+ lock_acquire+0x295/0x8a0 root/ramdisk/work_dir/linux/kernel/locking/lockdep.c:5401
+ __mutex_lock_common root/ramdisk/work_dir/linux/kernel/locking/mutex.c:956 [inline]
+ __mutex_lock+0x151/0x11e0 root/ramdisk/work_dir/linux/kernel/locking/mutex.c:1103
+ ieee80211_recalc_min_chandef+0x49/0x140 root/ramdisk/work_dir/linux/net/mac80211/util.c:2740
+ sta_info_move_state+0x1ad/0xb90 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:2019
+ sta_info_free+0x66/0x3c0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:274
+ sta_info_insert_rcu+0x585/0x26b0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:738
+ ieee80211_ibss_finish_sta+0x20b/0x380 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:592
+ ieee80211_ibss_work+0x2c7/0xeb0 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:1700
+ ieee80211_iface_work+0x8bb/0x9d0 root/ramdisk/work_dir/linux/net/mac80211/iface.c:1476
+ process_one_work+0x9a9/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2272
+ worker_thread+0x676/0x1170 root/ramdisk/work_dir/linux/kernel/workqueue.c:2418
+ kthread+0x3a0/0x490 root/ramdisk/work_dir/linux/kernel/kthread.c:292
+ ret_from_fork+0x1f/0x30 root/ramdisk/work_dir/linux/arch/x86/entry/entry_64.S:296
+wlan0: Created IBSS using preconfigured BSSID 50:50:50:50:50:50
+wlan0: Creating new IBSS network, BSSID 50:50:50:50:50:50
+wlan0: Created IBSS using preconfigured BSSID 50:50:50:50:50:50
+wlan0: Creating new IBSS network, BSSID 50:50:50:50:50:50

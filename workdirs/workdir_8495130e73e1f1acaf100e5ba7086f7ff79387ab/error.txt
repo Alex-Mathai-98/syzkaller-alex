@@ -1,0 +1,328 @@
+2024/03/05 00:10:33 loading corpus...
+2024/03/05 00:10:33 successfully loaded corpus with 0 records...
+2024/03/05 00:10:33 seed directory /home/am6215/syzkaller-alex/workdirs/workdir_8495130e73e1f1acaf100e5ba7086f7ff79387ab/seeds exists
+2024/03/05 00:10:33 Read seed : reproducer_1
+2024/03/05 00:10:33 Read seed : reproducer_2
+2024/03/05 00:10:33 serving http on http://127.0.0.1:56743
+2024/03/05 00:10:33 serving rpc on tcp://[::]:42723
+2024/03/05 00:10:33 booting test machines...
+2024/03/05 00:10:33 wait for the connection from test machine...
+2024/03/05 00:11:37 machine check:
+2024/03/05 00:11:37 syscalls                : 3873/4501
+2024/03/05 00:11:37 code coverage           : enabled
+2024/03/05 00:11:37 comparison tracing      : enabled
+2024/03/05 00:11:37 extra coverage          : enabled
+2024/03/05 00:11:37 delay kcov mmap         : mmap returned an invalid pointer
+2024/03/05 00:11:37 setuid sandbox          : enabled
+2024/03/05 00:11:37 namespace sandbox       : enabled
+2024/03/05 00:11:37 Android sandbox         : /sys/fs/selinux/policy does not exist
+2024/03/05 00:11:37 fault injection         : enabled
+2024/03/05 00:11:37 leak checking           : CONFIG_DEBUG_KMEMLEAK is not enabled
+2024/03/05 00:11:37 net packet injection    : enabled
+2024/03/05 00:11:37 net device setup        : enabled
+2024/03/05 00:11:37 concurrency sanitizer   : /sys/kernel/debug/kcsan does not exist
+2024/03/05 00:11:37 devlink PCI setup       : PCI device 0000:00:10.0 is not available
+2024/03/05 00:11:37 NIC VF setup            : PCI device 0000:00:11.0 is not available
+2024/03/05 00:11:37 USB emulation           : enabled
+2024/03/05 00:11:37 hci packet injection    : enabled
+2024/03/05 00:11:37 wifi device emulation   : enabled
+2024/03/05 00:11:37 802.15.4 emulation      : enabled
+2024/03/05 00:11:37 swap file               : enabled
+2024/03/05 00:11:37 corpus                  : 0 (deleted 0 broken)
+2024/03/05 00:11:37 seeds                   : 2/2
+2024/03/05 00:11:43 VMs 2, executed 0, cover 0, signal 0/0, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:11:53 VMs 3, executed 312, cover 2978, signal 3281/12456, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:12:03 VMs 4, executed 1321, cover 5432, signal 6424/13608, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:12:13 VMs 4, executed 2327, cover 6087, signal 7388/17187, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:12:23 VMs 4, executed 3917, cover 7838, signal 9464/22352, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:12:33 VMs 4, executed 6247, cover 9455, signal 11469/22841, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:12:43 VMs 4, executed 8328, cover 10231, signal 12606/23163, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:12:53 VMs 4, executed 10155, cover 11144, signal 13613/23760, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:13:03 VMs 4, executed 11847, cover 11738, signal 14425/26444, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:13:13 VMs 4, executed 13296, cover 14419, signal 17820/28902, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:13:23 VMs 4, executed 15090, cover 14724, signal 18302/30986, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:13:33 VMs 4, executed 17298, cover 15424, signal 19333/33335, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:13:43 VMs 4, executed 18772, cover 16601, signal 20973/35808, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:13:53 VMs 4, executed 20269, cover 17226, signal 21874/36904, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:14:03 VMs 4, executed 21658, cover 17808, signal 24102/39373, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:14:13 VMs 4, executed 23022, cover 18722, signal 24858/41030, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:14:23 VMs 4, executed 24724, cover 21408, signal 27852/45238, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:14:33 VMs 4, executed 26805, cover 23987, signal 31682/48203, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:14:43 VMs 4, executed 28434, cover 24501, signal 32506/49062, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:14:53 VMs 4, executed 30203, cover 25271, signal 33714/49948, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:15:03 VMs 4, executed 32148, cover 25851, signal 34449/50829, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:15:13 VMs 4, executed 33831, cover 26271, signal 35029/51512, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:15:23 VMs 4, executed 35429, cover 29279, signal 37528/52320, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:15:33 VMs 4, executed 37175, cover 30092, signal 38634/53224, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:15:43 VMs 4, executed 38477, cover 30514, signal 39316/53491, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:15:53 VMs 4, executed 39869, cover 31057, signal 40062/54284, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:16:03 VMs 4, executed 41431, cover 32196, signal 41418/55272, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:16:13 VMs 4, executed 42903, cover 32567, signal 42028/56575, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:16:23 VMs 4, executed 44268, cover 32864, signal 42502/58213, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:16:33 VMs 4, executed 45787, cover 33274, signal 43042/61470, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:16:43 VMs 4, executed 46910, cover 33659, signal 43603/63098, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:16:53 VMs 4, executed 47952, cover 34073, signal 44186/64016, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:17:03 VMs 4, executed 49124, cover 34235, signal 44409/64404, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:17:13 VMs 4, executed 50334, cover 34681, signal 45013/64906, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:17:23 VMs 4, executed 51863, cover 36109, signal 46828/65675, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:17:33 VMs 4, executed 53596, cover 36514, signal 47425/65822, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:17:43 VMs 4, executed 54926, cover 37331, signal 47754/69912, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:17:53 VMs 4, executed 56310, cover 37458, signal 47984/70391, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:18:03 VMs 4, executed 57688, cover 37853, signal 48636/71036, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:18:13 VMs 4, executed 58600, cover 39037, signal 50210/71711, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:18:23 VMs 4, executed 60124, cover 39813, signal 51257/72094, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:18:33 VMs 4, executed 61590, cover 40576, signal 52149/72998, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:18:43 VMs 4, executed 62878, cover 40792, signal 52504/73138, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:18:53 VMs 4, executed 64048, cover 40987, signal 52790/73645, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:19:03 VMs 4, executed 65175, cover 41073, signal 52930/74147, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:19:13 VMs 4, executed 66186, cover 41134, signal 53033/74523, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:19:23 VMs 4, executed 67321, cover 43582, signal 56339/74786, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:19:33 VMs 4, executed 68588, cover 43688, signal 56501/75231, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:19:43 VMs 4, executed 69699, cover 43870, signal 56937/75467, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:19:53 VMs 4, executed 70762, cover 43988, signal 57148/75637, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:20:03 VMs 4, executed 71780, cover 44074, signal 57296/75854, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:20:13 VMs 4, executed 72653, cover 45307, signal 58353/76010, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:20:23 VMs 4, executed 73725, cover 45585, signal 58758/76125, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:20:33 VMs 4, executed 74747, cover 45993, signal 59825/76270, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:20:43 VMs 4, executed 75734, cover 46148, signal 60101/76359, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:20:53 VMs 4, executed 76986, cover 46285, signal 60301/76487, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:21:03 VMs 4, executed 78162, cover 46414, signal 60539/76571, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:21:13 VMs 4, executed 79190, cover 46683, signal 60893/76835, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:21:23 VMs 4, executed 80297, cover 46916, signal 61230/77416, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:21:33 VMs 4, executed 81308, cover 47323, signal 62721/77547, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:21:43 VMs 4, executed 82244, cover 47323, signal 62722/78459, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:21:53 VMs 4, executed 83070, cover 47323, signal 62722/78897, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:22:03 VMs 4, executed 83898, cover 47324, signal 62734/79133, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:22:13 VMs 4, executed 84698, cover 47365, signal 62783/79463, crashes 0, repro 0, triageQLen 0
+2024/03/05 00:22:17 [ERROR] failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f root/ramdisk/work_dir/linux/kernel/sched/core.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/05 00:22:17 vm-0: crash: INFO: task hung in hub_port_init
+2024/03/05 00:22:17 vm-1: running for 10m43.210574339s, restarting
+2024/03/05 00:22:17 vm-2: running for 10m25.952527308s, restarting
+2024/03/05 00:22:17 loop: starting repro of 'INFO: task hung in hub_port_init' on instances [0 1 2]
+2024/03/05 00:22:17 reproducing crash 'INFO: task hung in hub_port_init': 228 programs, 3 VMs, timeouts [6m0s]
+2024/03/05 00:22:23 VMs 1, executed 85172, cover 47365, signal 62783/79469, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:22:33 VMs 1, executed 85905, cover 47365, signal 62783/79480, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:22:43 VMs 1, executed 86492, cover 47365, signal 62783/79486, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:22:53 VMs 1, executed 86975, cover 47365, signal 62783/79489, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:23:03 VMs 1, executed 87530, cover 47365, signal 62783/79493, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:23:13 VMs 1, executed 88123, cover 47365, signal 62783/79500, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:23:23 VMs 1, executed 88751, cover 47365, signal 62783/79508, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:23:33 VMs 1, executed 89554, cover 47365, signal 62783/79517, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:23:43 VMs 1, executed 90143, cover 47365, signal 62783/79524, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:23:53 VMs 1, executed 90824, cover 47365, signal 62783/79531, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:24:03 VMs 1, executed 91744, cover 47365, signal 62783/79541, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:24:13 VMs 1, executed 92446, cover 47365, signal 62783/79544, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:24:23 VMs 1, executed 93155, cover 47365, signal 62783/79554, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:24:33 VMs 1, executed 94096, cover 47365, signal 62783/79560, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:24:43 VMs 1, executed 94096, cover 47365, signal 62783/79560, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:24:53 VMs 1, executed 95028, cover 47372, signal 62786/79574, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:25:03 VMs 1, executed 95956, cover 47376, signal 62796/79578, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:25:13 VMs 1, executed 96864, cover 47450, signal 62932/79816, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:25:23 VMs 1, executed 97838, cover 47585, signal 63109/79873, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:25:33 VMs 1, executed 98670, cover 47691, signal 63262/79891, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:25:43 VMs 1, executed 98670, cover 47823, signal 63453/79891, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:25:53 VMs 1, executed 99600, cover 47906, signal 63576/79954, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:26:03 VMs 1, executed 100046, cover 48001, signal 63720/79976, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:26:13 VMs 1, executed 100694, cover 48224, signal 64034/80323, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:26:23 VMs 1, executed 101439, cover 48369, signal 64250/81210, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:26:33 VMs 1, executed 101883, cover 48425, signal 64325/81913, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:26:43 VMs 1, executed 101883, cover 48599, signal 64555/81913, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:26:53 VMs 1, executed 102612, cover 48683, signal 64682/82371, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:27:03 VMs 1, executed 103508, cover 48775, signal 64848/82698, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:27:13 VMs 1, executed 104320, cover 48880, signal 65041/82757, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:27:23 VMs 1, executed 104737, cover 48909, signal 65096/82822, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:27:33 VMs 1, executed 105461, cover 49241, signal 65557/82986, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:27:43 VMs 1, executed 105461, cover 49290, signal 65640/82986, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:27:53 VMs 1, executed 106032, cover 49422, signal 65832/83131, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:28:03 VMs 1, executed 106525, cover 49474, signal 65902/83251, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:28:13 VMs 1, executed 107032, cover 49623, signal 66102/83482, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:28:18 reproducing crash 'INFO: task hung in hub_port_init': failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/05 00:28:23 VMs 1, executed 107664, cover 49648, signal 66286/83670, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:28:33 VMs 1, executed 108321, cover 49695, signal 66366/83708, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:28:43 reproducing crash 'INFO: task hung in hub_port_init': failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/05 00:28:43 VMs 1, executed 108321, cover 49845, signal 66457/83708, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:28:53 VMs 1, executed 108897, cover 49988, signal 66658/83791, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:29:03 VMs 1, executed 109450, cover 50021, signal 66727/83876, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:29:13 VMs 1, executed 110128, cover 50052, signal 66790/83986, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:29:23 VMs 1, executed 110846, cover 50117, signal 66904/84004, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:29:33 reproducing crash 'INFO: task hung in hub_port_init': failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/05 00:29:33 VMs 1, executed 111312, cover 50155, signal 66974/84031, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:29:43 VMs 1, executed 111312, cover 50372, signal 67306/84031, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:29:53 VMs 1, executed 111928, cover 50464, signal 67433/84068, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:29:56 reproducing crash 'INFO: task hung in hub_port_init': failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/05 00:30:03 VMs 1, executed 112522, cover 50517, signal 67519/84368, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:30:13 VMs 1, executed 113032, cover 50534, signal 67569/86462, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:30:23 VMs 1, executed 113511, cover 50824, signal 67820/86935, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:30:33 VMs 1, executed 114046, cover 50856, signal 67878/87285, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:30:43 VMs 1, executed 114046, cover 50912, signal 67949/87285, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:30:53 VMs 1, executed 114453, cover 51145, signal 68257/87607, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:31:03 VMs 1, executed 115111, cover 51164, signal 68394/87677, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:31:13 VMs 1, executed 115712, cover 51290, signal 68565/87808, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:31:23 VMs 1, executed 116510, cover 51342, signal 68662/87925, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:31:33 VMs 1, executed 116723, cover 51410, signal 68768/87937, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:31:43 VMs 1, executed 116723, cover 51441, signal 68802/87937, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:31:53 VMs 1, executed 116929, cover 51444, signal 68809/87954, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:32:03 VMs 1, executed 117113, cover 51444, signal 68817/87965, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:32:13 VMs 1, executed 117168, cover 51444, signal 68817/88061, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:32:23 VMs 1, executed 117216, cover 51444, signal 68817/88075, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:32:33 VMs 1, executed 117263, cover 51444, signal 68817/88099, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:32:43 VMs 1, executed 117263, cover 51444, signal 68817/88099, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:32:53 VMs 1, executed 117309, cover 51444, signal 68817/88119, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:33:03 VMs 1, executed 117354, cover 51444, signal 68817/88137, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:33:13 VMs 1, executed 117394, cover 51444, signal 68826/88153, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:33:23 VMs 1, executed 117438, cover 51444, signal 68826/88161, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:33:33 VMs 1, executed 117481, cover 51444, signal 68826/88175, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:33:43 VMs 1, executed 117481, cover 51444, signal 68826/88175, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:33:53 VMs 1, executed 117524, cover 51444, signal 68826/88250, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:34:03 VMs 1, executed 117567, cover 51444, signal 68826/88287, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:34:13 VMs 1, executed 117611, cover 51444, signal 68826/88304, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:34:23 VMs 1, executed 117651, cover 51455, signal 68841/88365, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:34:33 VMs 1, executed 117697, cover 51455, signal 68841/88377, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:34:43 VMs 1, executed 117697, cover 51482, signal 68905/88377, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:34:53 VMs 1, executed 117746, cover 51503, signal 68919/88385, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:35:03 VMs 1, executed 117789, cover 51503, signal 68919/88403, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:35:13 VMs 1, executed 117834, cover 51503, signal 69032/88419, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:35:23 VMs 1, executed 117876, cover 51503, signal 69032/88423, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:35:33 VMs 1, executed 117927, cover 51503, signal 69032/88438, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:35:43 VMs 1, executed 117927, cover 51503, signal 69032/88438, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:35:53 VMs 1, executed 117973, cover 51503, signal 69033/88445, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:36:03 VMs 1, executed 118016, cover 51503, signal 69033/88449, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:36:13 VMs 1, executed 118061, cover 51503, signal 69033/88458, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:36:23 VMs 1, executed 118102, cover 51506, signal 69059/88470, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:36:33 VMs 1, executed 118143, cover 51506, signal 69059/88481, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:36:43 VMs 1, executed 118143, cover 51506, signal 69071/88481, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:36:53 VMs 1, executed 118189, cover 51511, signal 69077/88496, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:37:03 VMs 1, executed 118235, cover 51511, signal 69077/88509, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:37:13 VMs 1, executed 118275, cover 51517, signal 69093/88518, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:37:23 VMs 1, executed 118321, cover 51517, signal 69093/88528, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:37:33 VMs 1, executed 118367, cover 51517, signal 69093/88543, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:37:43 VMs 1, executed 118367, cover 51517, signal 69093/88543, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:37:53 VMs 1, executed 118408, cover 51517, signal 69105/88561, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:38:03 VMs 1, executed 118452, cover 51517, signal 69165/88576, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:38:13 VMs 1, executed 118491, cover 51525, signal 69176/88588, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:38:23 VMs 1, executed 118530, cover 51525, signal 69176/88597, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:38:33 VMs 1, executed 118577, cover 51525, signal 69176/88610, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:38:43 VMs 1, executed 118577, cover 51531, signal 69182/88610, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:38:53 VMs 1, executed 118618, cover 51531, signal 69182/88620, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:39:03 VMs 1, executed 118659, cover 51533, signal 69188/88627, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:39:13 VMs 1, executed 118706, cover 51533, signal 69193/88633, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:39:23 VMs 1, executed 118750, cover 51533, signal 69204/88636, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:39:23 reproducing crash 'INFO: task hung in hub_port_init': failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/05 00:39:33 VMs 1, executed 118794, cover 51533, signal 69204/88638, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:39:43 VMs 1, executed 118794, cover 51533, signal 69204/88638, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:39:46 reproducing crash 'INFO: task hung in hub_port_init': failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/05 00:39:53 VMs 1, executed 118846, cover 51533, signal 69204/88645, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:40:03 VMs 1, executed 118892, cover 51533, signal 69204/88646, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:40:13 VMs 1, executed 118939, cover 51533, signal 69209/88648, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:40:23 VMs 1, executed 118985, cover 51533, signal 69209/88651, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:40:33 VMs 1, executed 119029, cover 51533, signal 69209/88655, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:40:43 VMs 1, executed 119029, cover 51533, signal 69210/88655, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:40:53 VMs 1, executed 119083, cover 51533, signal 69216/88659, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:41:03 VMs 1, executed 119129, cover 51533, signal 69220/88661, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:41:13 VMs 1, executed 119188, cover 51533, signal 69225/88665, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:41:23 VMs 1, executed 119246, cover 51533, signal 69225/88670, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:41:33 VMs 1, executed 119298, cover 51533, signal 69229/88685, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:41:43 VMs 1, executed 119298, cover 51533, signal 69229/88685, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:41:53 VMs 1, executed 119345, cover 51607, signal 69352/88691, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:42:03 VMs 1, executed 119396, cover 51607, signal 69354/88706, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:42:13 VMs 1, executed 119453, cover 51607, signal 69362/88711, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:42:23 VMs 1, executed 119502, cover 51630, signal 69418/88713, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:42:33 VMs 1, executed 119548, cover 51630, signal 69418/88713, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:42:43 VMs 1, executed 119548, cover 51630, signal 69418/88713, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:42:53 VMs 1, executed 119599, cover 51630, signal 69418/88714, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:43:03 VMs 1, executed 119644, cover 51630, signal 69418/88714, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:43:13 VMs 1, executed 119720, cover 51654, signal 69445/88714, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:43:23 VMs 1, executed 119852, cover 51676, signal 69473/88724, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:43:33 VMs 1, executed 120016, cover 51684, signal 69487/88741, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:43:43 VMs 1, executed 120016, cover 51713, signal 69541/88741, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:43:53 VMs 1, executed 120152, cover 51773, signal 69636/88756, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:44:03 VMs 1, executed 120317, cover 51780, signal 69647/88761, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:44:13 VMs 1, executed 120514, cover 51795, signal 69742/88778, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:44:23 VMs 1, executed 120675, cover 51814, signal 69771/88789, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:44:33 VMs 1, executed 120835, cover 51881, signal 69864/88810, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:44:43 VMs 1, executed 120835, cover 51972, signal 69941/88810, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:44:53 VMs 1, executed 120995, cover 51980, signal 69956/88816, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:45:03 VMs 1, executed 121129, cover 51980, signal 69968/88827, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:45:13 VMs 1, executed 121281, cover 52029, signal 70036/88848, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:45:23 VMs 1, executed 121449, cover 52038, signal 70052/88864, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:45:33 VMs 1, executed 121634, cover 53517, signal 71634/89209, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:45:43 VMs 1, executed 121634, cover 53600, signal 71948/89209, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:45:53 VMs 1, executed 121810, cover 53609, signal 71964/89280, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:46:03 VMs 1, executed 121970, cover 53643, signal 72016/89295, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:46:13 VMs 1, executed 122151, cover 53695, signal 72100/89298, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:46:23 VMs 1, executed 122328, cover 53760, signal 72179/89309, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:46:33 VMs 1, executed 122746, cover 53784, signal 72233/89360, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:46:43 VMs 1, executed 122746, cover 53818, signal 72277/89360, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:46:53 VMs 1, executed 123205, cover 53838, signal 72314/89524, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:47:03 VMs 1, executed 123783, cover 53878, signal 72380/89718, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:47:13 VMs 1, executed 124423, cover 53984, signal 72523/89940, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:47:23 VMs 1, executed 124987, cover 54001, signal 72553/90080, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:47:33 VMs 1, executed 125422, cover 54012, signal 72575/90176, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:47:43 VMs 1, executed 125422, cover 54048, signal 72621/90176, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:47:53 VMs 1, executed 125789, cover 54053, signal 72633/90218, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:48:03 VMs 1, executed 126159, cover 54067, signal 72660/90255, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:48:13 VMs 1, executed 126542, cover 54178, signal 72810/90313, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:48:23 VMs 1, executed 126960, cover 54235, signal 72865/90348, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:48:33 VMs 1, executed 127356, cover 54309, signal 72976/90365, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:48:43 VMs 1, executed 127356, cover 54355, signal 73068/90365, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:48:53 VMs 1, executed 127779, cover 54395, signal 73134/90394, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:49:03 VMs 1, executed 128229, cover 54410, signal 73172/90470, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:49:13 VMs 1, executed 128892, cover 54500, signal 73333/90878, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:49:23 VMs 1, executed 129544, cover 54511, signal 73351/91523, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:49:33 VMs 1, executed 129994, cover 54556, signal 73417/91701, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:49:43 VMs 1, executed 129994, cover 54618, signal 73505/91701, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:49:53 VMs 1, executed 130591, cover 54642, signal 73545/91918, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:50:03 VMs 1, executed 131043, cover 54771, signal 73725/92017, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:50:13 VMs 1, executed 131826, cover 54883, signal 73891/92137, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:50:23 VMs 1, executed 132600, cover 54981, signal 74050/92156, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:50:33 VMs 1, executed 133190, cover 55088, signal 74183/92194, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:50:43 VMs 1, executed 133190, cover 55345, signal 74502/92194, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:50:53 VMs 1, executed 133611, cover 55409, signal 74591/92205, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:51:03 VMs 1, executed 134031, cover 55514, signal 74725/92237, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:51:13 VMs 1, executed 134464, cover 55685, signal 74971/92265, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:51:23 VMs 1, executed 135086, cover 55846, signal 75189/92464, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:51:33 VMs 1, executed 135763, cover 55912, signal 75300/92477, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:51:43 VMs 1, executed 135763, cover 55947, signal 75361/92477, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:51:53 VMs 1, executed 136436, cover 55966, signal 75384/92588, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:52:03 VMs 1, executed 136925, cover 55967, signal 75390/94447, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:52:13 VMs 1, executed 137453, cover 55980, signal 75412/94697, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:52:23 VMs 1, executed 137921, cover 55980, signal 75414/95163, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:52:33 VMs 1, executed 138270, cover 55998, signal 75445/95203, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:52:43 VMs 1, executed 138270, cover 56282, signal 75797/95203, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:52:53 VMs 1, executed 138857, cover 56370, signal 75913/95366, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:53:03 VMs 1, executed 139474, cover 56391, signal 75947/95386, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:53:13 VMs 1, executed 139610, cover 56398, signal 75965/95477, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:53:23 VMs 1, executed 139770, cover 56422, signal 75997/95484, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:53:33 VMs 1, executed 139884, cover 56649, signal 76310/95497, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:53:43 VMs 1, executed 139884, cover 56650, signal 76319/95497, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:53:53 VMs 1, executed 139979, cover 56650, signal 76319/95509, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:54:03 VMs 1, executed 140027, cover 56652, signal 76363/95528, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:54:13 VMs 1, executed 140069, cover 56670, signal 76381/95543, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:54:23 VMs 1, executed 140115, cover 56670, signal 76389/95549, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:54:33 VMs 1, executed 140158, cover 56670, signal 76396/95556, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:54:43 VMs 1, executed 140158, cover 56671, signal 76403/95556, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:54:53 VMs 1, executed 140197, cover 56675, signal 76415/95569, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:55:03 VMs 1, executed 140239, cover 56675, signal 76416/95569, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:55:13 VMs 1, executed 140286, cover 56676, signal 76426/95579, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:55:23 VMs 1, executed 140351, cover 56677, signal 76431/95583, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:55:33 VMs 1, executed 140488, cover 56724, signal 76500/95588, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:55:43 VMs 1, executed 140488, cover 56846, signal 76649/95588, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:55:53 VMs 1, executed 140648, cover 57073, signal 76947/95679, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:56:03 VMs 1, executed 141133, cover 57109, signal 77006/95706, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:56:13 VMs 1, executed 141564, cover 57191, signal 77128/95763, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:56:23 VMs 1, executed 141996, cover 57286, signal 77296/95850, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:56:33 VMs 1, executed 142362, cover 58348, signal 78553/95898, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:56:43 VMs 1, executed 142362, cover 58362, signal 78581/95898, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:56:53 VMs 1, executed 142798, cover 58451, signal 78700/95983, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:57:03 VMs 1, executed 143413, cover 58509, signal 78795/96038, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:57:13 VMs 1, executed 144146, cover 58575, signal 78912/96102, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:57:23 VMs 1, executed 144854, cover 58643, signal 79018/96608, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:57:33 VMs 1, executed 145487, cover 58911, signal 79366/96934, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:57:43 VMs 1, executed 145487, cover 58983, signal 79452/96934, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:57:53 VMs 1, executed 145967, cover 58988, signal 79467/97096, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:58:03 VMs 1, executed 146520, cover 59001, signal 79492/97190, crashes 1, repro 1, triageQLen 0
+2024/03/05 00:58:13 VMs 1, executed 147037, cover 59067, signal 79609/97319, crashes 1, repro 1, triageQLen 0
+SIGINT: shutting down...
+2024/03/05 00:58:21 vm-3: running for 46m19.710166808s, restarting
+SIGINT: shutting down harder...
+SIGINT: terminating

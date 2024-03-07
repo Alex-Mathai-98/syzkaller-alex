@@ -1,0 +1,154 @@
+Extracting prog: 1m34.909255725s
+Minimizing prog: 2m41.028095856s
+Simplifying prog options: 1m20.582077842s
+Extracting C: 24.953887596s
+Simplifying C: 0s
+
+
+143 programs, 3 VMs, timeouts [15s 1m40s 6m0s]
+extracting reproducer from 143 programs
+single: executing 8 programs separately with timeout 15s
+testing program (duration=15s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_init_net_socket$nl_generic-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$netlbl_mgmt-sendmsg$NLBL_MGMT_C_REMOVEDEF-syz_init_net_socket$nl_generic-syz_init_net_socket$nl_generic-syz_init_net_socket$nl_generic-syz_genetlink_get_family_id$netlbl_mgmt-sendmsg$NLBL_MGMT_C_REMOVEDEF-syz_init_net_socket$nl_generic
+detailed listing:
+executing program 0:
+r0 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r1 = syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+r2 = syz_genetlink_get_family_id$netlbl_mgmt(&(0x7f0000000040), r0)
+sendmsg$NLBL_MGMT_C_REMOVEDEF(r1, &(0x7f0000000100)={&(0x7f0000000000)={0x10, 0x0, 0x0, 0x40}, 0xc, &(0x7f00000000c0)={&(0x7f0000000080)={0x14, r2, 0x1, 0x5, 0x25dfdbfe}, 0x14}, 0x1, 0x0, 0x0, 0x20000000}, 0x20004450)
+syz_init_net_socket$nl_generic(0x10, 0x3, 0x10)
+syz_init_net_socket$nl_generic(0x10, 0x3, 0x10) (async)
+syz_init_net_socket$nl_generic(0x10, 0x3, 0x10) (async)
+syz_genetlink_get_family_id$netlbl_mgmt(&(0x7f0000000040), r0) (async)
+sendmsg$NLBL_MGMT_C_REMOVEDEF(r1, &(0x7f0000000100)={&(0x7f0000000000)={0x10, 0x0, 0x0, 0x40}, 0xc, &(0x7f00000000c0)={&(0x7f0000000080)={0x14, r2, 0x1, 0x5, 0x25dfdbfe}, 0x14}, 0x1, 0x0, 0x0, 0x20000000}, 0x20004450) (async)
+syz_init_net_socket$nl_generic(0x10, 0x3, 0x10) (async)
+
+program did not crash
+testing program (duration=15s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154-sendmsg$IEEE802154_LLSEC_DEL_KEY
+detailed listing:
+executing program 0:
+r0 = syz_genetlink_get_family_id$ieee802154(&(0x7f0000000080), 0xffffffffffffffff)
+sendmsg$IEEE802154_LLSEC_DEL_KEY(0xffffffffffffffff, &(0x7f00000001c0)={&(0x7f0000000040)={0x10, 0x0, 0x0, 0x40}, 0xc, &(0x7f0000000180)={&(0x7f0000000100)={0x54, r0, 0x1, 0x70bd2b, 0x25dfdbfe, {}, [@IEEE802154_ATTR_LLSEC_KEY_SOURCE_EXTENDED={0xc}, @IEEE802154_ATTR_PAN_ID={0x6}, @IEEE802154_ATTR_DEV_INDEX={0x8}, @IEEE802154_ATTR_LLSEC_KEY_SOURCE_SHORT={0x8, 0x2c, 0x5}, @IEEE802154_ATTR_DEV_INDEX={0x8}, @IEEE802154_ATTR_PAN_ID={0x6, 0x6, 0x3}, @IEEE802154_ATTR_HW_ADDR={0xc, 0x5, {0xaaaaaaaaaaaa0302}}]}, 0x54}, 0x1, 0x0, 0x0, 0x20000041}, 0x80)
+
+failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+program crashed: BUG: sleeping function called from invalid context in sta_info_move_state
+single: successfully extracted reproducer
+found reproducer with 2 syscalls
+minimizing guilty program
+testing program (duration=22.5s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154
+detailed listing:
+executing program 0:
+syz_genetlink_get_family_id$ieee802154(&(0x7f0000000080), 0xffffffffffffffff)
+
+program did not crash
+testing program (duration=22.5s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): sendmsg$IEEE802154_LLSEC_DEL_KEY
+detailed listing:
+executing program 0:
+sendmsg$IEEE802154_LLSEC_DEL_KEY(0xffffffffffffffff, &(0x7f00000001c0)={&(0x7f0000000040)={0x10, 0x0, 0x0, 0x40}, 0xc, &(0x7f0000000180)={&(0x7f0000000100)={0x54, 0x0, 0x1, 0x70bd2b, 0x25dfdbfe, {}, [@IEEE802154_ATTR_LLSEC_KEY_SOURCE_EXTENDED={0xc}, @IEEE802154_ATTR_PAN_ID={0x6}, @IEEE802154_ATTR_DEV_INDEX={0x8}, @IEEE802154_ATTR_LLSEC_KEY_SOURCE_SHORT={0x8, 0x2c, 0x5}, @IEEE802154_ATTR_DEV_INDEX={0x8}, @IEEE802154_ATTR_PAN_ID={0x6, 0x6, 0x3}, @IEEE802154_ATTR_HW_ADDR={0xc, 0x5, {0xaaaaaaaaaaaa0302}}]}, 0x54}, 0x1, 0x0, 0x0, 0x20000041}, 0x80)
+
+program did not crash
+testing program (duration=22.5s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154-sendmsg$IEEE802154_LLSEC_DEL_KEY
+detailed listing:
+executing program 0:
+r0 = syz_genetlink_get_family_id$ieee802154(0x0, 0xffffffffffffffff)
+sendmsg$IEEE802154_LLSEC_DEL_KEY(0xffffffffffffffff, &(0x7f00000001c0)={&(0x7f0000000040)={0x10, 0x0, 0x0, 0x40}, 0xc, &(0x7f0000000180)={&(0x7f0000000100)={0x54, r0, 0x1, 0x70bd2b, 0x25dfdbfe, {}, [@IEEE802154_ATTR_LLSEC_KEY_SOURCE_EXTENDED={0xc}, @IEEE802154_ATTR_PAN_ID={0x6}, @IEEE802154_ATTR_DEV_INDEX={0x8}, @IEEE802154_ATTR_LLSEC_KEY_SOURCE_SHORT={0x8, 0x2c, 0x5}, @IEEE802154_ATTR_DEV_INDEX={0x8}, @IEEE802154_ATTR_PAN_ID={0x6, 0x6, 0x3}, @IEEE802154_ATTR_HW_ADDR={0xc, 0x5, {0xaaaaaaaaaaaa0302}}]}, 0x54}, 0x1, 0x0, 0x0, 0x20000041}, 0x80)
+
+program did not crash
+testing program (duration=22.5s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154-sendmsg$IEEE802154_LLSEC_DEL_KEY
+detailed listing:
+executing program 0:
+syz_genetlink_get_family_id$ieee802154(&(0x7f0000000080), 0xffffffffffffffff)
+sendmsg$IEEE802154_LLSEC_DEL_KEY(0xffffffffffffffff, 0x0, 0x80)
+
+program did not crash
+testing program (duration=22.5s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154-sendmsg$IEEE802154_LLSEC_DEL_KEY
+detailed listing:
+executing program 0:
+r0 = syz_genetlink_get_family_id$ieee802154(&(0x7f0000000080), 0xffffffffffffffff)
+sendmsg$IEEE802154_LLSEC_DEL_KEY(0xffffffffffffffff, &(0x7f00000001c0)={0x0, 0x0, &(0x7f0000000180)={&(0x7f0000000100)={0x54, r0, 0x1, 0x70bd2b, 0x25dfdbfe, {}, [@IEEE802154_ATTR_LLSEC_KEY_SOURCE_EXTENDED={0xc}, @IEEE802154_ATTR_PAN_ID={0x6}, @IEEE802154_ATTR_DEV_INDEX={0x8}, @IEEE802154_ATTR_LLSEC_KEY_SOURCE_SHORT={0x8, 0x2c, 0x5}, @IEEE802154_ATTR_DEV_INDEX={0x8}, @IEEE802154_ATTR_PAN_ID={0x6, 0x6, 0x3}, @IEEE802154_ATTR_HW_ADDR={0xc, 0x5, {0xaaaaaaaaaaaa0302}}]}, 0x54}, 0x1, 0x0, 0x0, 0x20000041}, 0x80)
+
+failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+program crashed: BUG: sleeping function called from invalid context in sta_info_move_state
+testing program (duration=22.5s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154-sendmsg$IEEE802154_LLSEC_DEL_KEY
+detailed listing:
+executing program 0:
+syz_genetlink_get_family_id$ieee802154(&(0x7f0000000080), 0xffffffffffffffff)
+sendmsg$IEEE802154_LLSEC_DEL_KEY(0xffffffffffffffff, &(0x7f00000001c0)={0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x20000041}, 0x80)
+
+failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/mac80211/sta_info.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+program crashed: BUG: sleeping function called from invalid context in sta_info_move_state
+extracting C reproducer
+testing compiled C program (duration=22.5s, {Threaded:true Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154-sendmsg$IEEE802154_LLSEC_DEL_KEY
+program did not crash
+simplifying guilty program options
+testing program (duration=22.5s, {Threaded:false Repeat:true RepeatTimes:0 Procs:8 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154-sendmsg$IEEE802154_LLSEC_DEL_KEY
+detailed listing:
+executing program 0:
+syz_genetlink_get_family_id$ieee802154(&(0x7f0000000080), 0xffffffffffffffff)
+sendmsg$IEEE802154_LLSEC_DEL_KEY(0xffffffffffffffff, &(0x7f00000001c0)={0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x20000041}, 0x80)
+
+program did not crash
+testing program (duration=22.5s, {Threaded:true Repeat:false RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:false Cgroups:false BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154-sendmsg$IEEE802154_LLSEC_DEL_KEY
+detailed listing:
+executing program 0:
+syz_genetlink_get_family_id$ieee802154(&(0x7f0000000080), 0xffffffffffffffff)
+sendmsg$IEEE802154_LLSEC_DEL_KEY(0xffffffffffffffff, &(0x7f00000001c0)={0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x20000041}, 0x80)
+
+program did not crash
+testing program (duration=22.5s, {Threaded:true Repeat:true RepeatTimes:0 Procs:1 Slowdown:1 Sandbox:none SandboxArg:0 Leak:false NetInjection:true NetDevices:true NetReset:true Cgroups:true BinfmtMisc:true CloseFDs:true KCSAN:false DevlinkPCI:false NicVF:false USB:true VhciInjection:true Wifi:true IEEE802154:true Sysctl:true Swap:true UseTmpDir:true HandleSegv:true Repro:true Trace:false LegacyOptions:{Collide:false Fault:false FaultCall:0 FaultNth:0}}): syz_genetlink_get_family_id$ieee802154-sendmsg$IEEE802154_LLSEC_DEL_KEY
+detailed listing:
+executing program 0:
+syz_genetlink_get_family_id$ieee802154(&(0x7f0000000080), 0xffffffffffffffff)
+sendmsg$IEEE802154_LLSEC_DEL_KEY(0xffffffffffffffff, &(0x7f00000001c0)={0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x20000041}, 0x80)
+
+program did not crash
+reproducing took 6m1.473361984s
+repro crashed as (corrupted=false):
+BUG: sleeping function called from invalid context at net/mac80211/sta_info.c:1962
+in_atomic(): 0, irqs_disabled(): 0, non_block: 0, pid: 9, name: kworker/u4:0
+INFO: lockdep is turned off.
+Preemption disabled at:
+[<ffffffff88eb2a09>] __mutex_lock_common root/ramdisk/work_dir/linux/kernel/locking/mutex.c:955 [inline]
+[<ffffffff88eb2a09>] __mutex_lock+0x129/0x11e0 root/ramdisk/work_dir/linux/kernel/locking/mutex.c:1103
+CPU: 0 PID: 9 Comm: kworker/u4:0 Not tainted 5.10.0-rc3-syzkaller #0
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.16.2-debian-1.16.2-1 04/01/2014
+Workqueue: phy12 ieee80211_iface_work
+Call Trace:
+ __dump_stack root/ramdisk/work_dir/linux/lib/dump_stack.c:77 [inline]
+ dump_stack+0x107/0x163 root/ramdisk/work_dir/linux/lib/dump_stack.c:118
+ ___might_sleep.cold+0x1e6/0x22c root/ramdisk/work_dir/linux/kernel/sched/core.c:7298
+ sta_info_move_state+0x32/0xb90 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:1962
+ sta_info_free+0x66/0x3c0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:274
+ sta_info_insert_rcu+0x585/0x26b0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:738
+ ieee80211_ibss_finish_sta+0x20b/0x380 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:592
+ ieee80211_ibss_work+0x2c7/0xeb0 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:1700
+ ieee80211_iface_work+0x8bb/0x9d0 root/ramdisk/work_dir/linux/net/mac80211/iface.c:1476
+ process_one_work+0x9a9/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2272
+ worker_thread+0x676/0x1170 root/ramdisk/work_dir/linux/kernel/workqueue.c:2418
+ kthread+0x3a0/0x490 root/ramdisk/work_dir/linux/kernel/kthread.c:292
+ ret_from_fork+0x1f/0x30 root/ramdisk/work_dir/linux/arch/x86/entry/entry_64.S:296
+
+final repro crashed as (corrupted=false):
+BUG: sleeping function called from invalid context at net/mac80211/sta_info.c:1962
+in_atomic(): 0, irqs_disabled(): 0, non_block: 0, pid: 9, name: kworker/u4:0
+INFO: lockdep is turned off.
+Preemption disabled at:
+[<ffffffff88eb2a09>] __mutex_lock_common root/ramdisk/work_dir/linux/kernel/locking/mutex.c:955 [inline]
+[<ffffffff88eb2a09>] __mutex_lock+0x129/0x11e0 root/ramdisk/work_dir/linux/kernel/locking/mutex.c:1103
+CPU: 0 PID: 9 Comm: kworker/u4:0 Not tainted 5.10.0-rc3-syzkaller #0
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.16.2-debian-1.16.2-1 04/01/2014
+Workqueue: phy12 ieee80211_iface_work
+Call Trace:
+ __dump_stack root/ramdisk/work_dir/linux/lib/dump_stack.c:77 [inline]
+ dump_stack+0x107/0x163 root/ramdisk/work_dir/linux/lib/dump_stack.c:118
+ ___might_sleep.cold+0x1e6/0x22c root/ramdisk/work_dir/linux/kernel/sched/core.c:7298
+ sta_info_move_state+0x32/0xb90 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:1962
+ sta_info_free+0x66/0x3c0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:274
+ sta_info_insert_rcu+0x585/0x26b0 root/ramdisk/work_dir/linux/net/mac80211/sta_info.c:738
+ ieee80211_ibss_finish_sta+0x20b/0x380 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:592
+ ieee80211_ibss_work+0x2c7/0xeb0 root/ramdisk/work_dir/linux/net/mac80211/ibss.c:1700
+ ieee80211_iface_work+0x8bb/0x9d0 root/ramdisk/work_dir/linux/net/mac80211/iface.c:1476
+ process_one_work+0x9a9/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2272
+ worker_thread+0x676/0x1170 root/ramdisk/work_dir/linux/kernel/workqueue.c:2418
+ kthread+0x3a0/0x490 root/ramdisk/work_dir/linux/kernel/kthread.c:292
+ ret_from_fork+0x1f/0x30 root/ramdisk/work_dir/linux/arch/x86/entry/entry_64.S:296
+

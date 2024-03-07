@@ -1,0 +1,7 @@
+sendmsg$NLBL_MGMT_C_REMOVEDEF(r1, &(0x7f0000000100)={&(0x7f0000000000)={0x10, 0x0, 0x0, 0x40}, 0xc, &(0x7f00000000c0)={&(0x7f0000000080)={0x14, r2, 0x1, 0x5, 0x25dfdbfe}, 0x14}, 0x1, 0x0, 0x0, 0x20000000}, 0x20004450) (async)
+syz_init_net_socket$nl_generic(0x10, 0x3, 0x10) (async)
+2024/03/04 23:33:00 SYZFATAL: executor 2 failed 11 times: executor 2: exit status 67 err exit status 67
+SYZFAIL: tun: ioctl(TUNSETIFF) failed
+ (errno 16: Device or resource busy)
+loop exited with status 67
+exit status 67

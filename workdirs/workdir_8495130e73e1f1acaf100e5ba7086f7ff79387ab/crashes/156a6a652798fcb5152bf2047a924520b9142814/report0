@@ -1,0 +1,86 @@
+INFO: task kworker/1:42:12842 blocked for more than 143 seconds.
+      Not tainted 5.10.0-rc2-syzkaller #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:kworker/1:42    state:D stack:27408 pid:12842 ppid:     2 flags:0x00004000
+Workqueue: usb_hub_wq hub_event
+Call Trace:
+ context_switch root/ramdisk/work_dir/linux/kernel/sched/core.c:3774 [inline]
+ __schedule+0xa07/0x2100 root/ramdisk/work_dir/linux/kernel/sched/core.c:4523
+ schedule+0xd1/0x270 root/ramdisk/work_dir/linux/kernel/sched/core.c:4601
+ usb_kill_urb.part.0+0x19a/0x220 root/ramdisk/work_dir/linux/drivers/usb/core/urb.c:711
+ usb_kill_urb+0x7c/0x90 root/ramdisk/work_dir/linux/drivers/usb/core/urb.c:706
+ usb_start_wait_urb+0x24c/0x4c0 root/ramdisk/work_dir/linux/drivers/usb/core/message.c:64
+ usb_internal_control_msg root/ramdisk/work_dir/linux/drivers/usb/core/message.c:102 [inline]
+ usb_control_msg+0x31b/0x4a0 root/ramdisk/work_dir/linux/drivers/usb/core/message.c:153
+ hub_port_init+0x96e/0x2fc0 root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:4707
+ hub_port_connect root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:5154 [inline]
+ hub_port_connect_change root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:5362 [inline]
+ port_event root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:5508 [inline]
+ hub_event+0x202d/0x46c0 root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:5590
+ process_one_work+0x9a9/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2272
+ worker_thread+0x676/0x1170 root/ramdisk/work_dir/linux/kernel/workqueue.c:2418
+ kthread+0x3a0/0x490 root/ramdisk/work_dir/linux/kernel/kthread.c:292
+ ret_from_fork+0x1f/0x30 root/ramdisk/work_dir/linux/arch/x86/entry/entry_64.S:296
+
+Showing all locks held in the system:
+1 lock held by khungtaskd/1657:
+ #0: ffffffff8b337620 (rcu_read_lock){....}-{1:2}, at: debug_show_all_locks+0x53/0x260 root/ramdisk/work_dir/linux/kernel/locking/lockdep.c:6253
+2 locks held by getty/5229:
+ #0: ffff888018c60098 (&tty->ldisc_sem){++++}-{0:0}, at: tty_ldisc_ref_wait+0x20/0x80 root/ramdisk/work_dir/linux/drivers/tty/tty_ldisc.c:266
+ #1: ffffc900014432e8 (&ldata->atomic_read_lock){+.+.}-{3:3}, at: n_tty_read+0x212/0x1b40 root/ramdisk/work_dir/linux/drivers/tty/n_tty.c:2156
+3 locks held by kworker/u4:3/5419:
+1 lock held by syz-executor.6/5564:
+4 locks held by kworker/u4:4/5799:
+ #0: ffff888040233938 ((wq_completion)netns){+.+.}-{0:0}, at: arch_atomic64_set root/ramdisk/work_dir/linux/./arch/x86/include/asm/atomic64_64.h:34 [inline]
+ #0: ffff888040233938 ((wq_completion)netns){+.+.}-{0:0}, at: atomic64_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-instrumented.h:856 [inline]
+ #0: ffff888040233938 ((wq_completion)netns){+.+.}-{0:0}, at: atomic_long_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-long.h:41 [inline]
+ #0: ffff888040233938 ((wq_completion)netns){+.+.}-{0:0}, at: set_work_data root/ramdisk/work_dir/linux/kernel/workqueue.c:616 [inline]
+ #0: ffff888040233938 ((wq_completion)netns){+.+.}-{0:0}, at: set_work_pool_and_clear_pending root/ramdisk/work_dir/linux/kernel/workqueue.c:643 [inline]
+ #0: ffff888040233938 ((wq_completion)netns){+.+.}-{0:0}, at: process_one_work+0x88f/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2243
+ #1: ffffc90002ae7d98 (net_cleanup_work){+.+.}-{0:0}, at: process_one_work+0x8c3/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2247
+ #2: ffffffff8c91ea10 (pernet_ops_rwsem){++++}-{3:3}, at: cleanup_net+0x9b/0xa00 root/ramdisk/work_dir/linux/net/core/net_namespace.c:566
+ #3: ffffffff8b33faf0 (rcu_state.barrier_mutex){+.+.}-{3:3}, at: rcu_barrier+0x44/0x490 root/ramdisk/work_dir/linux/kernel/rcu/tree.c:3801
+5 locks held by kworker/1:42/12842:
+ #0: ffff8880116c6138 ((wq_completion)usb_hub_wq){+.+.}-{0:0}, at: arch_atomic64_set root/ramdisk/work_dir/linux/./arch/x86/include/asm/atomic64_64.h:34 [inline]
+ #0: ffff8880116c6138 ((wq_completion)usb_hub_wq){+.+.}-{0:0}, at: atomic64_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-instrumented.h:856 [inline]
+ #0: ffff8880116c6138 ((wq_completion)usb_hub_wq){+.+.}-{0:0}, at: atomic_long_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-long.h:41 [inline]
+ #0: ffff8880116c6138 ((wq_completion)usb_hub_wq){+.+.}-{0:0}, at: set_work_data root/ramdisk/work_dir/linux/kernel/workqueue.c:616 [inline]
+ #0: ffff8880116c6138 ((wq_completion)usb_hub_wq){+.+.}-{0:0}, at: set_work_pool_and_clear_pending root/ramdisk/work_dir/linux/kernel/workqueue.c:643 [inline]
+ #0: ffff8880116c6138 ((wq_completion)usb_hub_wq){+.+.}-{0:0}, at: process_one_work+0x88f/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2243
+ #1: ffffc90012d67d98 ((work_completion)(&hub->events)){+.+.}-{0:0}, at: process_one_work+0x8c3/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2247
+ #2: ffff888014a59218 (&dev->mutex){....}-{3:3}, at: device_lock root/ramdisk/work_dir/linux/./include/linux/device.h:731 [inline]
+ #2: ffff888014a59218 (&dev->mutex){....}-{3:3}, at: hub_event+0x1ae/0x46c0 root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:5536
+ #3: ffff888014a5c588 (&port_dev->status_lock){+.+.}-{3:3}, at: usb_lock_port root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:3029 [inline]
+ #3: ffff888014a5c588 (&port_dev->status_lock){+.+.}-{3:3}, at: hub_port_connect root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:5153 [inline]
+ #3: ffff888014a5c588 (&port_dev->status_lock){+.+.}-{3:3}, at: hub_port_connect_change root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:5362 [inline]
+ #3: ffff888014a5c588 (&port_dev->status_lock){+.+.}-{3:3}, at: port_event root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:5508 [inline]
+ #3: ffff888014a5c588 (&port_dev->status_lock){+.+.}-{3:3}, at: hub_event+0x2015/0x46c0 root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:5590
+ #4: ffff8880124c3668 (hcd->address0_mutex){+.+.}-{3:3}, at: hub_port_init+0x1b4/0x2fc0 root/ramdisk/work_dir/linux/drivers/usb/core/hub.c:4581
+2 locks held by kworker/0:78/13940:
+ #0: ffff888010066538 ((wq_completion)rcu_gp){+.+.}-{0:0}, at: arch_atomic64_set root/ramdisk/work_dir/linux/./arch/x86/include/asm/atomic64_64.h:34 [inline]
+ #0: ffff888010066538 ((wq_completion)rcu_gp){+.+.}-{0:0}, at: atomic64_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-instrumented.h:856 [inline]
+ #0: ffff888010066538 ((wq_completion)rcu_gp){+.+.}-{0:0}, at: atomic_long_set root/ramdisk/work_dir/linux/./include/asm-generic/atomic-long.h:41 [inline]
+ #0: ffff888010066538 ((wq_completion)rcu_gp){+.+.}-{0:0}, at: set_work_data root/ramdisk/work_dir/linux/kernel/workqueue.c:616 [inline]
+ #0: ffff888010066538 ((wq_completion)rcu_gp){+.+.}-{0:0}, at: set_work_pool_and_clear_pending root/ramdisk/work_dir/linux/kernel/workqueue.c:643 [inline]
+ #0: ffff888010066538 ((wq_completion)rcu_gp){+.+.}-{0:0}, at: process_one_work+0x88f/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2243
+ #1: ffffc90012797d98 ((work_completion)(&rew.rew_work)){+.+.}-{0:0}, at: process_one_work+0x8c3/0x15d0 root/ramdisk/work_dir/linux/kernel/workqueue.c:2247
+2 locks held by syz-executor.4/16015:
+2 locks held by syz-executor.5/16035:
+ #0: ffffffff8c91ea10 (pernet_ops_rwsem){++++}-{3:3}, at: copy_net_ns+0x26a/0x570 root/ramdisk/work_dir/linux/net/core/net_namespace.c:479
+ #1: ffffffff8b33fbe8 (rcu_state.exp_mutex){+.+.}-{3:3}, at: exp_funnel_lock root/ramdisk/work_dir/linux/kernel/rcu/tree_exp.h:322 [inline]
+ #1: ffffffff8b33fbe8 (rcu_state.exp_mutex){+.+.}-{3:3}, at: synchronize_rcu_expedited+0x27e/0x610 root/ramdisk/work_dir/linux/kernel/rcu/tree_exp.h:836
+2 locks held by syz-executor.3/16078:
+ #0: ffffffff8c91ea10 (pernet_ops_rwsem){++++}-{3:3}, at: copy_net_ns+0x26a/0x570 root/ramdisk/work_dir/linux/net/core/net_namespace.c:479
+ #1: ffffffff8c930c88 (rtnl_mutex){+.+.}-{3:3}, at: ip_tunnel_delete_nets+0x8e/0x5a0 root/ramdisk/work_dir/linux/net/ipv4/ip_tunnel.c:1111
+1 lock held by syz-executor.0/16091:
+ #0: ffffffff8c91ea10 (pernet_ops_rwsem){++++}-{3:3}, at: copy_net_ns+0x26a/0x570 root/ramdisk/work_dir/linux/net/core/net_namespace.c:479
+2 locks held by syz-executor.1/16098:
+ #0: ffffffff8c91ea10 (pernet_ops_rwsem){++++}-{3:3}, at: copy_net_ns+0x26a/0x570 root/ramdisk/work_dir/linux/net/core/net_namespace.c:479
+ #1: ffffffff8b33faf0 (rcu_state.barrier_mutex){+.+.}-{3:3}, at: rcu_barrier+0x44/0x490 root/ramdisk/work_dir/linux/kernel/rcu/tree.c:3801
+2 locks held by syz-executor.2/16102:
+ #0: ffffffff8c91ea10 (pernet_ops_rwsem){++++}-{3:3}, at: copy_net_ns+0x26a/0x570 root/ramdisk/work_dir/linux/net/core/net_namespace.c:479
+ #1: ffffffff8b33fbe8 (rcu_state.exp_mutex){+.+.}-{3:3}, at: exp_funnel_lock root/ramdisk/work_dir/linux/kernel/rcu/tree_exp.h:290 [inline]
+ #1: ffffffff8b33fbe8 (rcu_state.exp_mutex){+.+.}-{3:3}, at: synchronize_rcu_expedited+0x4f2/0x610 root/ramdisk/work_dir/linux/kernel/rcu/tree_exp.h:836
+
+=============================================
+

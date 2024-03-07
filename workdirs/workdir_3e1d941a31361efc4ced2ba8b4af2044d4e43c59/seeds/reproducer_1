@@ -1,0 +1,2 @@
+#{"threaded":true,"repeat":true,"procs":6,"sandbox":"none","fault_call":-1,"cgroups":true,"close_fds":true,"tmpdir":true}
+syz_usbip_server_init(0x4)

@@ -1,0 +1,74 @@
+2024/03/04 23:14:56 loading corpus...
+2024/03/04 23:14:56 successfully loaded corpus with 0 records...
+2024/03/04 23:14:56 seed directory /home/am6215/syzkaller-alex/workdirs/workdir_d2b3aee844b79e6caf13726a1f8f1c8abf2836b6/seeds exists
+2024/03/04 23:14:56 Read seed : reproducer_1
+2024/03/04 23:14:56 serving http on http://127.0.0.1:56741
+2024/03/04 23:14:56 serving rpc on tcp://[::]:41029
+2024/03/04 23:14:56 booting test machines...
+2024/03/04 23:14:56 wait for the connection from test machine...
+2024/03/04 23:16:06 [ERROR] failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/core/devlink.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/04 23:16:06 vm-0: crash: WARNING in devl_port_unregister
+2024/03/04 23:16:16 [ERROR] failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/core/devlink.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/04 23:16:16 vm-1: crash: WARNING in devl_port_unregister
+2024/03/04 23:16:26 [ERROR] failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/core/devlink.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/04 23:16:26 vm-2: crash: WARNING in devl_port_unregister
+2024/03/04 23:16:29 machine check:
+2024/03/04 23:16:29 syscalls                : 3931/4501
+2024/03/04 23:16:29 code coverage           : enabled
+2024/03/04 23:16:29 comparison tracing      : enabled
+2024/03/04 23:16:29 extra coverage          : enabled
+2024/03/04 23:16:29 delay kcov mmap         : enabled
+2024/03/04 23:16:29 setuid sandbox          : enabled
+2024/03/04 23:16:29 namespace sandbox       : enabled
+2024/03/04 23:16:29 Android sandbox         : /sys/fs/selinux/policy does not exist
+2024/03/04 23:16:29 fault injection         : enabled
+2024/03/04 23:16:29 leak checking           : CONFIG_DEBUG_KMEMLEAK is not enabled
+2024/03/04 23:16:29 net packet injection    : enabled
+2024/03/04 23:16:29 net device setup        : enabled
+2024/03/04 23:16:29 concurrency sanitizer   : /sys/kernel/debug/kcsan does not exist
+2024/03/04 23:16:29 devlink PCI setup       : PCI device 0000:00:10.0 is not available
+2024/03/04 23:16:29 NIC VF setup            : PCI device 0000:00:11.0 is not available
+2024/03/04 23:16:29 USB emulation           : enabled
+2024/03/04 23:16:29 hci packet injection    : enabled
+2024/03/04 23:16:29 wifi device emulation   : enabled
+2024/03/04 23:16:29 802.15.4 emulation      : enabled
+2024/03/04 23:16:29 swap file               : enabled
+2024/03/04 23:16:29 corpus                  : 0 (deleted 0 broken)
+2024/03/04 23:16:29 seeds                   : 1/1
+2024/03/04 23:16:36 VMs 1, executed 0, cover 0, signal 0/0, crashes 3, repro 0, triageQLen 0
+2024/03/04 23:16:39 [ERROR] failed to symbolize report: failed to start scripts/get_maintainer.pl [scripts/get_maintainer.pl --git-min-percent=15 -f net/core/devlink.c]: fork/exec scripts/get_maintainer.pl: no such file or directory
+2024/03/04 23:16:39 vm-3: crash: WARNING in devl_port_unregister
+2024/03/04 23:16:46 VMs 0, executed 0, cover 0, signal 0/0, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:16:56 VMs 0, executed 0, cover 0, signal 0/0, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:16:57 vm-0: running for 567.97µs, restarting
+2024/03/04 23:17:06 VMs 0, executed 0, cover 0, signal 0/0, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:17:07 vm-1: running for 471.714µs, restarting
+2024/03/04 23:17:07 loop: starting repro of 'WARNING in devl_port_unregister' on instances [3 0 1]
+2024/03/04 23:17:07 loop: repro on [3 0 1] finished 'WARNING in devl_port_unregister', repro=false crepro=false desc='' hub=false from_dashboard=false
+2024/03/04 23:17:07 repro failed: crash log does not contain any programs
+2024/03/04 23:17:16 VMs 0, executed 0, cover 0, signal 0/0, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:17:26 VMs 1, executed 0, cover 0, signal 0/0, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:17:36 VMs 1, executed 38, cover 0, signal 0/6211, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:17:46 VMs 1, executed 405, cover 3511, signal 2992/8104, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:17:56 VMs 1, executed 405, cover 4649, signal 5782/8104, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:18:06 VMs 4, executed 1322, cover 4867, signal 6233/8349, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:18:16 VMs 4, executed 1550, cover 5080, signal 6771/8787, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:18:26 VMs 4, executed 2956, cover 6043, signal 7452/19625, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:18:36 VMs 4, executed 4412, cover 7894, signal 9731/23345, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:18:46 VMs 4, executed 5582, cover 8370, signal 10367/23694, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:18:56 VMs 4, executed 7005, cover 8671, signal 10795/23982, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:19:06 VMs 4, executed 7884, cover 8701, signal 10905/24074, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:19:16 VMs 4, executed 8648, cover 9085, signal 11345/24257, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:19:26 VMs 4, executed 9476, cover 9438, signal 11847/24395, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:19:36 VMs 4, executed 10067, cover 9706, signal 12136/24430, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:19:46 VMs 4, executed 10829, cover 9959, signal 12510/24506, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:19:56 VMs 4, executed 11313, cover 10007, signal 12607/24677, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:20:06 VMs 4, executed 11918, cover 12585, signal 15350/24750, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:20:16 VMs 4, executed 12405, cover 13185, signal 16373/24787, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:20:26 VMs 4, executed 13088, cover 13344, signal 16611/26209, crashes 4, repro 0, triageQLen 0
+2024/03/04 23:20:36 VMs 4, executed 13413, cover 14337, signal 17746/26220, crashes 4, repro 0, triageQLen 0
+SIGINT: shutting down...
+2024/03/04 23:20:36 vm-3: running for 2m36.291515541s, restarting
+2024/03/04 23:20:36 vm-1: running for 2m37.411867068s, restarting
+2024/03/04 23:20:36 vm-2: running for 3m18.831970529s, restarting
+2024/03/04 23:20:36 vm-0: running for 2m37.071214868s, restarting

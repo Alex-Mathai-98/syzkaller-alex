@@ -1,0 +1,148 @@
+2024/03/05 19:01:28 limiting number of VMs from 4 to 1 in debug mode
+2024/03/05 19:01:28 loading corpus...
+2024/03/05 19:01:28 successfully loaded corpus with 0 records...
+2024/03/05 19:01:28 seed directory /home/am6215/syzkaller-alex/workdirs/workdir_acd057014183117dce4c1fe3f3cdcca7cd52656f/seeds exists
+2024/03/05 19:01:28 Read seed : reproducer_1
+2024/03/05 19:01:28 Read seed : reproducer_2
+2024/03/05 19:01:28 Read seed : reproducer_3
+2024/03/05 19:01:28 Read seed : reproducer_4
+2024/03/05 19:01:28 Read seed : reproducer_5
+2024/03/05 19:01:28 Read seed : reproducer_6
+2024/03/05 19:01:28 Read seed : reproducer_7
+2024/03/05 19:01:28 Read seed : reproducer_8
+2024/03/05 19:01:28 serving http on http://127.0.0.1:56756
+2024/03/05 19:01:28 serving rpc on tcp://[::]:45219
+2024/03/05 19:01:28 booting test machines...
+2024/03/05 19:01:28 wait for the connection from test machine...
+2024/03/05 19:01:28 running command: qemu-system-x86_64 []string{"-m", "2048", "-smp", "2", "-chardev", "socket,id=SOCKSYZ,server=on,wait=off,host=localhost,port=36650", "-mon", "chardev=SOCKSYZ,mode=control", "-display", "none", "-serial", "stdio", "-no-reboot", "-name", "VM-0", "-device", "virtio-rng-pci", "-enable-kvm", "-cpu", "host,migratable=off", "-device", "e1000,netdev=net0", "-netdev", "user,id=net0,restrict=on,hostfwd=tcp:127.0.0.1:64923-:22,hostfwd=tcp::64273-:6060", "-hda", "/home/am6215/built-kernel-images/acd057014183117dce4c1fe3f3cdcca7cd52656f/disk.raw", "-snapshot", "-kernel", "/home/am6215/built-kernel-images/acd057014183117dce4c1fe3f3cdcca7cd52656f/kernel", "-append", "root=/dev/sda console=ttyS0 root=/dev/sda1"}
+2024/03/05 19:01:38 running ssh: []string{"-p", "64923", "-F", "/dev/null", "-o", "UserKnownHostsFile=/dev/null", "-o", "BatchMode=yes", "-o", "IdentitiesOnly=yes", "-o", "StrictHostKeyChecking=no", "-o", "ConnectTimeout=10", "-v", "root@localhost", "pwd"}
+2024/03/05 19:01:48 ssh failed: failed to run ["ssh" "-p" "64923" "-F" "/dev/null" "-o" "UserKnownHostsFile=/dev/null" "-o" "BatchMode=yes" "-o" "IdentitiesOnly=yes" "-o" "StrictHostKeyChecking=no" "-o" "ConnectTimeout=10" "-v" "root@localhost" "pwd"]: exit status 255
+OpenSSH_9.2p1 Debian-2+deb12u2, OpenSSL 3.0.11 19 Sep 2023
+debug1: Reading configuration data /dev/null
+debug1: Connecting to localhost [::1] port 64923.
+debug1: connect to address ::1 port 64923: Connection refused
+debug1: Connecting to localhost [127.0.0.1] port 64923.
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug1: identity file /root/.ssh/id_rsa type -1
+debug1: identity file /root/.ssh/id_rsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa type -1
+debug1: identity file /root/.ssh/id_ecdsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /root/.ssh/id_ed25519 type -1
+debug1: identity file /root/.ssh/id_ed25519-cert type -1
+debug1: identity file /root/.ssh/id_ed25519_sk type -1
+debug1: identity file /root/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /root/.ssh/id_xmss type -1
+debug1: identity file /root/.ssh/id_xmss-cert type -1
+debug1: identity file /root/.ssh/id_dsa type -1
+debug1: identity file /root/.ssh/id_dsa-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u2
+Connection timed out during banner exchange
+Connection to 127.0.0.1 port 64923 timed out
+2024/03/05 19:01:53 running ssh: []string{"-p", "64923", "-F", "/dev/null", "-o", "UserKnownHostsFile=/dev/null", "-o", "BatchMode=yes", "-o", "IdentitiesOnly=yes", "-o", "StrictHostKeyChecking=no", "-o", "ConnectTimeout=10", "-v", "root@localhost", "pwd"}
+2024/03/05 19:02:03 ssh failed: failed to run ["ssh" "-p" "64923" "-F" "/dev/null" "-o" "UserKnownHostsFile=/dev/null" "-o" "BatchMode=yes" "-o" "IdentitiesOnly=yes" "-o" "StrictHostKeyChecking=no" "-o" "ConnectTimeout=10" "-v" "root@localhost" "pwd"]: exit status 255
+OpenSSH_9.2p1 Debian-2+deb12u2, OpenSSL 3.0.11 19 Sep 2023
+debug1: Reading configuration data /dev/null
+debug1: Connecting to localhost [::1] port 64923.
+debug1: connect to address ::1 port 64923: Connection refused
+debug1: Connecting to localhost [127.0.0.1] port 64923.
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug1: identity file /root/.ssh/id_rsa type -1
+debug1: identity file /root/.ssh/id_rsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa type -1
+debug1: identity file /root/.ssh/id_ecdsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /root/.ssh/id_ed25519 type -1
+debug1: identity file /root/.ssh/id_ed25519-cert type -1
+debug1: identity file /root/.ssh/id_ed25519_sk type -1
+debug1: identity file /root/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /root/.ssh/id_xmss type -1
+debug1: identity file /root/.ssh/id_xmss-cert type -1
+debug1: identity file /root/.ssh/id_dsa type -1
+debug1: identity file /root/.ssh/id_dsa-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u2
+Connection timed out during banner exchange
+Connection to 127.0.0.1 port 64923 timed out
+2024/03/05 19:02:08 running ssh: []string{"-p", "64923", "-F", "/dev/null", "-o", "UserKnownHostsFile=/dev/null", "-o", "BatchMode=yes", "-o", "IdentitiesOnly=yes", "-o", "StrictHostKeyChecking=no", "-o", "ConnectTimeout=10", "-v", "root@localhost", "pwd"}
+2024/03/05 19:02:18 ssh failed: failed to run ["ssh" "-p" "64923" "-F" "/dev/null" "-o" "UserKnownHostsFile=/dev/null" "-o" "BatchMode=yes" "-o" "IdentitiesOnly=yes" "-o" "StrictHostKeyChecking=no" "-o" "ConnectTimeout=10" "-v" "root@localhost" "pwd"]: exit status 255
+OpenSSH_9.2p1 Debian-2+deb12u2, OpenSSL 3.0.11 19 Sep 2023
+debug1: Reading configuration data /dev/null
+debug1: Connecting to localhost [::1] port 64923.
+debug1: connect to address ::1 port 64923: Connection refused
+debug1: Connecting to localhost [127.0.0.1] port 64923.
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug1: identity file /root/.ssh/id_rsa type -1
+debug1: identity file /root/.ssh/id_rsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa type -1
+debug1: identity file /root/.ssh/id_ecdsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /root/.ssh/id_ed25519 type -1
+debug1: identity file /root/.ssh/id_ed25519-cert type -1
+debug1: identity file /root/.ssh/id_ed25519_sk type -1
+debug1: identity file /root/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /root/.ssh/id_xmss type -1
+debug1: identity file /root/.ssh/id_xmss-cert type -1
+debug1: identity file /root/.ssh/id_dsa type -1
+debug1: identity file /root/.ssh/id_dsa-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u2
+Connection timed out during banner exchange
+Connection to 127.0.0.1 port 64923 timed out
+2024/03/05 19:02:23 running ssh: []string{"-p", "64923", "-F", "/dev/null", "-o", "UserKnownHostsFile=/dev/null", "-o", "BatchMode=yes", "-o", "IdentitiesOnly=yes", "-o", "StrictHostKeyChecking=no", "-o", "ConnectTimeout=10", "-v", "root@localhost", "pwd"}
+2024/03/05 19:02:33 ssh failed: failed to run ["ssh" "-p" "64923" "-F" "/dev/null" "-o" "UserKnownHostsFile=/dev/null" "-o" "BatchMode=yes" "-o" "IdentitiesOnly=yes" "-o" "StrictHostKeyChecking=no" "-o" "ConnectTimeout=10" "-v" "root@localhost" "pwd"]: exit status 255
+OpenSSH_9.2p1 Debian-2+deb12u2, OpenSSL 3.0.11 19 Sep 2023
+debug1: Reading configuration data /dev/null
+debug1: Connecting to localhost [::1] port 64923.
+debug1: connect to address ::1 port 64923: Connection refused
+debug1: Connecting to localhost [127.0.0.1] port 64923.
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug1: identity file /root/.ssh/id_rsa type -1
+debug1: identity file /root/.ssh/id_rsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa type -1
+debug1: identity file /root/.ssh/id_ecdsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /root/.ssh/id_ed25519 type -1
+debug1: identity file /root/.ssh/id_ed25519-cert type -1
+debug1: identity file /root/.ssh/id_ed25519_sk type -1
+debug1: identity file /root/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /root/.ssh/id_xmss type -1
+debug1: identity file /root/.ssh/id_xmss-cert type -1
+debug1: identity file /root/.ssh/id_dsa type -1
+debug1: identity file /root/.ssh/id_dsa-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u2
+Connection timed out during banner exchange
+Connection to 127.0.0.1 port 64923 timed out
+2024/03/05 19:02:38 running ssh: []string{"-p", "64923", "-F", "/dev/null", "-o", "UserKnownHostsFile=/dev/null", "-o", "BatchMode=yes", "-o", "IdentitiesOnly=yes", "-o", "StrictHostKeyChecking=no", "-o", "ConnectTimeout=10", "-v", "root@localhost", "pwd"}
+2024/03/05 19:02:48 ssh failed: failed to run ["ssh" "-p" "64923" "-F" "/dev/null" "-o" "UserKnownHostsFile=/dev/null" "-o" "BatchMode=yes" "-o" "IdentitiesOnly=yes" "-o" "StrictHostKeyChecking=no" "-o" "ConnectTimeout=10" "-v" "root@localhost" "pwd"]: exit status 255
+OpenSSH_9.2p1 Debian-2+deb12u2, OpenSSL 3.0.11 19 Sep 2023
+debug1: Reading configuration data /dev/null
+debug1: Connecting to localhost [::1] port 64923.
+debug1: connect to address ::1 port 64923: Connection refused
+debug1: Connecting to localhost [127.0.0.1] port 64923.
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug1: identity file /root/.ssh/id_rsa type -1
+debug1: identity file /root/.ssh/id_rsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa type -1
+debug1: identity file /root/.ssh/id_ecdsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk type -1
+debug1: identity file /root/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /root/.ssh/id_ed25519 type -1
+debug1: identity file /root/.ssh/id_ed25519-cert type -1
+debug1: identity file /root/.ssh/id_ed25519_sk type -1
+debug1: identity file /root/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /root/.ssh/id_xmss type -1
+debug1: identity file /root/.ssh/id_xmss-cert type -1
+debug1: identity file /root/.ssh/id_dsa type -1
+debug1: identity file /root/.ssh/id_dsa-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u2
+Connection timed out during banner exchange
+Connection to 127.0.0.1 port 64923 timed out
+SIGINT: shutting down...

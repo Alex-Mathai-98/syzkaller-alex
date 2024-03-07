@@ -1,0 +1,1 @@
+sudo /home/am6215/syzkaller-alex/bin/syz-manager -config /home/am6215/syzkaller-alex/workdirs/workdir_d2b3aee844b79e6caf13726a1f8f1c8abf2836b6/my.cfg > /home/am6215/syzkaller-alex/workdirs/workdir_d2b3aee844b79e6caf13726a1f8f1c8abf2836b6/out.txt 2> /home/am6215/syzkaller-alex/workdirs/workdir_d2b3aee844b79e6caf13726a1f8f1c8abf2836b6/error.txt
